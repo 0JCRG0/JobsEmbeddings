@@ -19,11 +19,7 @@ load_dotenv(".env")
 LOGGER_MAIN = os.getenv("LOGGER_MAIN")
 LOGGER_TEST = os.getenv("LOGGER_TEST")
 SAVE_PATH = os.getenv("SAVE_PATH")
-user = os.getenv("user")
-password = os.getenv("password")
-host = os.getenv("host")
-port = os.getenv("port")
-database = os.getenv("database")
+RENDER_POSTGRE_URL = os.environ.get("RENDER_POSTGRE_URL")
 
 def clean_rows(s):
 	if not isinstance(s, str):
@@ -197,154 +193,172 @@ def filter_df_per_country(df: pd.DataFrame, user_desired_country:str) -> pd.Data
 	return filtered_df
 
 
-def to_pgvector_e5_base_v2(df:pd.DataFrame):
-	# create a connection to the PostgreSQL database
-	cnx = psycopg2.connect(user=user, password=password, host=host, port=port, database=database)
-
-	# create a cursor object
-	cursor = cnx.cursor()
-	cursor.execute('CREATE EXTENSION IF NOT EXISTS vector')
-
-	#Register the vector type with your connection or cursor
-	register_vector(cnx)
-
-	# execute the initial count query and retrieve the result
-	initial_count_query = '''
-		SELECT COUNT(*) FROM embeddings_e5_base_v2
-	'''
-	cursor.execute(initial_count_query)
-	initial_count_result = cursor.fetchone()
+def to_embeddings_e5_base_v2(df: pd.DataFrame, db_url:str):
 	
-	""" IF THERE IS A DUPLICATE ID IT SKIPS THAT ROW & DOES NOT INSERTS IT
-		IDs UNIQUENESS SHOULD BE ENSURED DUE TO ABOVE.
-	"""
-	jobs_added = []
-	for index, row in df.iterrows():
+	try:
+		# create a connection to the PostgreSQL database
+		cnx = psycopg2.connect(db_url)
+
+		# create a cursor object
+		cursor = cnx.cursor()
+		cursor.execute('CREATE EXTENSION IF NOT EXISTS vector')
+
+		#Register the vector type with your connection or cursor
+		register_vector(cnx)
+
+		create_table_if_not_exist = """ 
+			CREATE TABLE IF NOT EXISTS embeddings_e5_base_v2 (
+			id integer UNIQUE,
+			job_info TEXT,
+			timestamp TIMESTAMP,
+			embedding vector(768)
+			);"""
+		
+		#cursor.execute(create_table_if_not_exist)
+
+		# execute the initial count query and retrieve the result
+		initial_count_query = '''
+			SELECT COUNT(*) FROM embeddings_e5_base_v2
+		'''
+		cursor.execute(initial_count_query)
+		initial_count_result = cursor.fetchone()
+		
+		""" IF THERE IS A DUPLICATE ID IT SKIPS THAT ROW & DOES NOT INSERTS IT
+			IDs UNIQUENESS SHOULD BE ENSURED DUE TO ABOVE.
+		"""
+		jobs_added = []
+		for index, row in df.iterrows():
+			insert_query = '''
+				INSERT INTO embeddings_e5_base_v2 (id, job_info, timestamp, embedding)
+				VALUES (%s, %s, %s, %s)
+				ON CONFLICT (id) DO NOTHING
+				RETURNING *
+			'''
+			values = (row['id'], row['job_info'], row['timestamp'], row['embedding'])
+			cursor.execute(insert_query, values)
+			affected_rows = cursor.rowcount
+			if affected_rows > 0:
+				jobs_added.append(cursor.fetchone())
+
+
+		""" LOGGING/PRINTING RESULTS"""
+
+		final_count_query = '''
+			SELECT COUNT(*) FROM embeddings_e5_base_v2
+		'''
+		# execute the count query and retrieve the result
+		cursor.execute(final_count_query)
+		final_count_result = cursor.fetchone()
+
+		# calculate the number of unique jobs that were added
+		if initial_count_result is not None:
+			initial_count = initial_count_result[0]
+		else:
+			initial_count = 0
+		jobs_added_count = len(jobs_added)
+		if final_count_result is not None:
+			final_count = final_count_result[0]
+		else:
+			final_count = 0
+
+		# check if the result set is not empty
+		print("\n")
+		print("Embeddings_e5_base_v2 Table Report:", "\n")
+		print(f"Total count of jobs before crawling: {initial_count}")
+		print(f"Total number of unique jobs: {jobs_added_count}")
+		print(f"Current total count of jobs in PostgreSQL: {final_count}")
+
+		postgre_report = "Embeddings_e5_base_v2 Table Report:"\
+						"\n"\
+						f"Total count of jobs before crawling: {initial_count}" \
+						"\n"\
+						f"Total number of unique jobs: {jobs_added_count}" \
+						"\n"\
+						f"Current total count of jobs in PostgreSQL: {final_count}"
+
+		logging.info(postgre_report)
+
+		# commit the changes to the database
+		cnx.commit()
+
+		# close the cursor and connection
+		cursor.close()
+		cnx.close()
+	except Exception as e:
+		logging.error(f"Exception at to_embeddings_e5_base_v2().\nException as follows: {e}.\n")
+		raise Exception
+
+def deprecated_to_embeddings_e5_base_v2_batches(df: pd.DataFrame, db_url:str, batch_size: int = 1000):
+	start_time = timeit.default_timer()
+
+	try:
+		# create a connection to the PostgreSQL database
+		cnx = psycopg2.connect(db_url)
+
+		# create a cursor object
+		cursor = cnx.cursor()
+		cursor.execute('CREATE EXTENSION IF NOT EXISTS vector')
+
+		# Register the vector type with your connection or cursor
+		register_vector(cnx)
+
+		# execute the initial count query and retrieve the result
+		initial_count_query = 'SELECT COUNT(*) FROM embeddings_e5_base_v2'
+		cursor.execute(initial_count_query)
+		initial_count_result = cursor.fetchone()
+
+		# IDs uniqueness should be ensured due to the ON CONFLICT (id) DO NOTHING clause.
+		jobs_added = []
+
+		# Prepare the insert query outside the loop
 		insert_query = '''
 			INSERT INTO embeddings_e5_base_v2 (id, job_info, timestamp, embedding)
 			VALUES (%s, %s, %s, %s)
 			ON CONFLICT (id) DO NOTHING
 			RETURNING *
 		'''
-		values = (row['id'], row['job_info'], row['timestamp'], row['embedding'])
-		cursor.execute(insert_query, values)
-		affected_rows = cursor.rowcount
-		if affected_rows > 0:
-			jobs_added.append(cursor.fetchone())
 
+		# Iterate over the DataFrame in batches
+		for batch_start in range(0, len(df), batch_size):
+			batch_df = df.iloc[batch_start:batch_start + batch_size]
 
-	""" LOGGING/PRINTING RESULTS"""
+			# Create a list of tuples for executemany
+			values = [(row['id'], row['job_info'], row['timestamp'], row['embedding']) for _, row in batch_df.iterrows()]
 
-	final_count_query = '''
-		SELECT COUNT(*) FROM embeddings_e5_base_v2
-	'''
-	# execute the count query and retrieve the result
-	cursor.execute(final_count_query)
-	final_count_result = cursor.fetchone()
+			# Execute the insert query with the batch
+			cursor.executemany(insert_query, values)
+			affected_rows = cursor.rowcount
 
-	# calculate the number of unique jobs that were added
-	if initial_count_result is not None:
-		initial_count = initial_count_result[0]
-	else:
-		initial_count = 0
-	jobs_added_count = len(jobs_added)
-	if final_count_result is not None:
-		final_count = final_count_result[0]
-	else:
-		final_count = 0
+			# Fetch all rows if there are results to fetch
+			if affected_rows > 0:
+				jobs_added.extend(cursor.fetchall())
 
-	# check if the result set is not empty
-	print("\n")
-	print("Embeddings_e5_base_v2 Table Report:", "\n")
-	print(f"Total count of jobs before crawling: {initial_count}")
-	print(f"Total number of unique jobs: {jobs_added_count}")
-	print(f"Current total count of jobs in PostgreSQL: {final_count}")
+		# Logging/printing results
+		final_count_query = 'SELECT COUNT(*) FROM embeddings_e5_base_v2'
+		cursor.execute(final_count_query)
+		final_count_result = cursor.fetchone()
 
-	postgre_report = "Embeddings_e5_base_v2 Table Report:"\
-					"\n"\
-					f"Total count of jobs before crawling: {initial_count}" \
-					"\n"\
-					f"Total number of unique jobs: {jobs_added_count}" \
-					"\n"\
-					f"Current total count of jobs in PostgreSQL: {final_count}"
+		initial_count = initial_count_result[0] if initial_count_result is not None else 0
+		jobs_added_count = len(jobs_added)
+		final_count = final_count_result[0] if final_count_result is not None else 0
 
-	logging.info(postgre_report)
+		elapsed_time = timeit.default_timer() - start_time
 
-	# commit the changes to the database
-	cnx.commit()
+		postgre_report = f"""
+			Embeddings_e5_base_v2 report:\n
+			Total count of jobs before crawling: {initial_count}
+			Total number of unique jobs: {jobs_added_count}
+			Current total count of jobs in PostgreSQL: {final_count}
+			Duration: {elapsed_time:.2f}
+			"""
+		
+		logging.info(postgre_report)
 
-	# close the cursor and connection
-	cursor.close()
-	cnx.close()
+		# Commit the changes to the database
+		cnx.commit()
 
-def to_pgvector_e5_base_v2_batches(df: pd.DataFrame, batch_size: int = 1000):
-	start_time = timeit.default_timer()
-
-	# create a connection to the PostgreSQL database
-	cnx = psycopg2.connect(user=user, password=password, host=host, port=port, database=database)
-
-	# create a cursor object
-	cursor = cnx.cursor()
-	cursor.execute('CREATE EXTENSION IF NOT EXISTS vector')
-
-	# Register the vector type with your connection or cursor
-	register_vector(cnx)
-
-	# execute the initial count query and retrieve the result
-	initial_count_query = 'SELECT COUNT(*) FROM embeddings_e5_base_v2'
-	cursor.execute(initial_count_query)
-	initial_count_result = cursor.fetchone()
-
-	# IDs uniqueness should be ensured due to the ON CONFLICT (id) DO NOTHING clause.
-	jobs_added = []
-
-	# Prepare the insert query outside the loop
-	insert_query = '''
-		INSERT INTO embeddings_e5_base_v2 (id, job_info, timestamp, embedding)
-		VALUES (%s, %s, %s, %s)
-		ON CONFLICT (id) DO NOTHING
-		RETURNING *
-	'''
-
-	# Iterate over the DataFrame in batches
-	for batch_start in range(0, len(df), batch_size):
-		batch_df = df.iloc[batch_start:batch_start + batch_size]
-
-		# Create a list of tuples for executemany
-		values = [(row['id'], row['job_info'], row['timestamp'], row['embedding']) for _, row in batch_df.iterrows()]
-
-		# Execute the insert query with the batch
-		cursor.executemany(insert_query, values)
-		affected_rows = cursor.rowcount
-
-		# Fetch all rows if there are results to fetch
-		if affected_rows > 0:
-			jobs_added.extend(cursor.fetchall())
-
-	# Logging/printing results
-	final_count_query = 'SELECT COUNT(*) FROM embeddings_e5_base_v2'
-	cursor.execute(final_count_query)
-	final_count_result = cursor.fetchone()
-
-	initial_count = initial_count_result[0] if initial_count_result is not None else 0
-	jobs_added_count = len(jobs_added)
-	final_count = final_count_result[0] if final_count_result is not None else 0
-
-	elapsed_time = timeit.default_timer() - start_time
-
-	postgre_report = f"""
-		Embeddings_e5_base_v2 report:\n
-		Total count of jobs before crawling: {initial_count}
-		Total number of unique jobs: {jobs_added_count}
-		Current total count of jobs in PostgreSQL: {final_count}
-		Duration: {elapsed_time:.2f}
-		"""
-	
-	logging.info(postgre_report)
-
-	# Commit the changes to the database
-	cnx.commit()
-
-	# Close the cursor and connection
-	cursor.close()
-	cnx.close()
+		# Close the cursor and connection
+		cursor.close()
+		cnx.close()
+	except Exception as e:
+		logging.error(f"Exception at to_embeddings_e5_base_v2().\nException as follows: {e}.\n")
