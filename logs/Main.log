@@ -74,3 +74,79 @@ Current total count of jobs in PostgreSQL: 2067
 2023-11-29 12:18:03,914 INFO: 
 PostgreToEmbeddings has finsihed correctly! Writing the max_id: 514679
 
+2023-11-29 12:39:10,136 INFO: 
+
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 510451
+
+2023-11-29 12:39:10,246 INFO: 
+
+Jobs selected for embedding: 86.\Temporal new max_id: 514679
+
+2023-11-29 12:39:10,567 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 86
+TOTAL NUMBER OF TOKENS: 94381
+NUMBER OF TRUNCATIONS: 28
+AVERAGE NUMBER OF TOKENS PER BATCH: 1097.453488372093
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-11-29 12:39:36,967 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.44 minutes.
+
+2023-11-29 12:39:37,059 ERROR: 
+Exception at to_embeddings_e5_base_v2().
+Exception as follows: could not translate host name "dpg-cl00hpjamefc73cgd2q0-a" to address: nodename nor servname provided, or not known
+.
+
+
+2023-11-29 12:39:37,060 INFO: 
+PostgreToEmbeddings has finsihed correctly! Writing the max_id: 514679
+
+2023-11-29 12:46:15,268 INFO: 
+
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 514679
+
+2023-11-29 12:46:15,381 INFO: 
+
+Jobs selected for embedding: 0.\Temporal new max_id: 514679
+
+2023-11-29 12:46:25,655 INFO: 
+
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 510451
+
+2023-11-29 12:46:25,668 INFO: 
+
+Jobs selected for embedding: 86.\Temporal new max_id: 514679
+
+2023-11-29 12:46:25,962 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 86
+TOTAL NUMBER OF TOKENS: 94381
+NUMBER OF TRUNCATIONS: 28
+AVERAGE NUMBER OF TOKENS PER BATCH: 1097.453488372093
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-11-29 12:46:51,934 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.43 minutes.
+
+2023-11-29 12:47:00,883 INFO: 
+Embeddings_e5_base_v2 Table Report:
+Total count of jobs before crawling: 0
+Total number of unique jobs: 86
+Current total count of jobs in PostgreSQL: 86
+
+2023-11-29 12:47:00,974 INFO: 
+PostgreToEmbeddings has finsihed correctly! Writing the max_id: 514679
+
