@@ -1,0 +1,12 @@
+.env
+*.parquet
+*.bin
+*.pkl
+/env1
+/.cfg
+__pycache__/
+utils/__pycache__
+*.json
+~/.aws
+archive
+tools

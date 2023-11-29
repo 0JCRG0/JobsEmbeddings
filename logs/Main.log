@@ -1,0 +1,76 @@
+2023-11-29 12:05:20,160 INFO: 
+
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 510451
+
+2023-11-29 12:05:20,308 INFO: 
+
+Jobs selected for embedding: 86.\Temporal new max_id: 514679
+
+2023-11-29 12:05:20,643 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 86
+TOTAL NUMBER OF TOKENS: 94381
+NUMBER OF TRUNCATIONS: 28
+AVERAGE NUMBER OF TOKENS PER BATCH: 1097.453488372093
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-11-29 12:05:49,821 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.49 minutes.
+
+2023-11-29 12:05:49,996 INFO: 
+Embeddings_e5_base_v2 Table Report:
+Total count of jobs before crawling: 2011
+Total number of unique jobs: 56
+Current total count of jobs in PostgreSQL: 2067
+
+2023-11-29 12:05:50,000 INFO: 
+PostgreToEmbeddings has finsihed correctly! Writing the max_id: 514679
+
+2023-11-29 12:17:17,717 INFO: 
+
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 514679
+
+2023-11-29 12:17:17,790 INFO: 
+
+Jobs selected for embedding: 0.\Temporal new max_id: 514679
+
+2023-11-29 12:17:35,550 INFO: 
+
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 510451
+
+2023-11-29 12:17:35,599 INFO: 
+
+Jobs selected for embedding: 86.\Temporal new max_id: 514679
+
+2023-11-29 12:17:35,899 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 86
+TOTAL NUMBER OF TOKENS: 94381
+NUMBER OF TRUNCATIONS: 28
+AVERAGE NUMBER OF TOKENS PER BATCH: 1097.453488372093
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-11-29 12:18:03,739 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.46 minutes.
+
+2023-11-29 12:18:03,913 INFO: 
+Embeddings_e5_base_v2 Table Report:
+Total count of jobs before crawling: 2012
+Total number of unique jobs: 55
+Current total count of jobs in PostgreSQL: 2067
+
+2023-11-29 12:18:03,914 INFO: 
+PostgreToEmbeddings has finsihed correctly! Writing the max_id: 514679
+
