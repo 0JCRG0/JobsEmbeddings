@@ -19,13 +19,9 @@ Env variables
 """
 
 load_dotenv('.env')
-user = os.getenv("user")
-password = os.getenv("password")
-host = os.getenv("host")
-port = os.getenv("port")
-database = os.getenv("database")
 SAVE_PATH = os.getenv("SAVE_PATH")
 LOCAL_POSTGRE_URL = os.environ.get("LOCAL_POSTGRE_URL")
+RENDER_POSTGRE_URL = os.environ.get("RENDER_POSTGRE_URL")
 LOGGER_MAIN = os.environ.get("LOGGER_MAIN")
 #Setting API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -49,7 +45,7 @@ with open(SAVE_PATH + '/max_id.txt', 'r') as f:
 
 logging.info(f"\n\nStarting PostgreToEmbeddings.\nSelecting new jobs to embed. Starting from ID: {max_id}")
 
-def postgre_to_df(table_name:str, max_id:int = 0) -> list:
+def local_postgre_to_df(table_name:str, max_id:int = 0) -> list:
 	#Connect to local postgre db
 	conn = psycopg2.connect(LOCAL_POSTGRE_URL)
 
@@ -82,7 +78,7 @@ def postgre_to_df(table_name:str, max_id:int = 0) -> list:
 ##Comment after first call - to restart id count
 #max_id = 0
 
-IDS, titles, locations, descriptions, TIMESTAMPS, max_id = postgre_to_df("main_jobs", max_id)
+IDS, titles, locations, descriptions, TIMESTAMPS, max_id = local_postgre_to_df("main_jobs", max_id)
 
 logging.info(f"\nJobs selected for embedding: {len(IDS)}.\Temporal new max_id: {max_id}")
 
@@ -164,8 +160,7 @@ def main(embedding_model:str):
 	elif embedding_model == "e5_base_v2":
 		df = embeddings_e5_base_v2_to_df(batches_to_embed=FORMATTED_E5_QUERY_BATCHES, jobs_info=JOBS_INFO_BATCHES, batches_ids=IDS, batches_timestamps=TIMESTAMPS)
 		try:
-			to_pgvector_e5_base_v2(df)
-			#to_pgvector_e5_base_v2_batches(df=df, batch_size=500)
+			to_embeddings_e5_base_v2(df=df, db_url=RENDER_POSTGRE_URL)
 			#At the end of the script, save max_id to the file
 			with open(SAVE_PATH + '/max_id.txt', 'w') as f:
 				f.write(str(max_id))
