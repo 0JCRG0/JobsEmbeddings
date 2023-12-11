@@ -35,20 +35,18 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 		level=logging.INFO,
 		format=log_format)
 
-	#DETERMINING WHICH DB & TABLE TO SEND THE EMBEDDINGS
+	#DETERMINING WHICH DB TO SEND THE EMBEDDINGS & WHICH MAX_ID_FILE TO OPEN
 
-	DB_URL = test_or_prod(pipeline=pipeline)
+	DB_URL, MAX_ID_FILE = test_or_prod(pipeline=pipeline)
 
 	# Check that DB_URL has an assigned valid value
-	if DB_URL is None:
-		logging.error("Error: URL_DB must be assigned valid values.")
-		return
+	assert DB_URL is not None or MAX_ID_FILE is not None, "Either URL_DB or MAX_ID_FILE must be assigned valid values. However, at least one of them is not."	
 
 	#Uncomment after first call
-	with open(SAVE_PATH + '/max_id.txt', 'r') as f:
+	with open(f"data/{MAX_ID_FILE}.txt", "r") as f:
 		MAX_ID = int(f.read())
 
-	logging.info(f"\n\nStarting PostgreToEmbeddings.\nSelecting new jobs to embed. Starting from ID: {MAX_ID}")
+	logging.info(f"\n\nStarting PostgreToEmbeddings.\nSelecting new jobs to embed. Starting from ID: {MAX_ID} taken from {MAX_ID_FILE}.txt")
 
 	def fetch_postgre_rows(db_url:str=DB_URL, max_id:int = 0) -> list:
 		
@@ -63,6 +61,7 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 		# Create a cursor object
 		cur = conn.cursor()
 
+		#TODO: The rows to fetch need to have an ID bigger than max_id & to be recent. Why do I want embeddings that are not recent?
 		# Fetch new data from the table where id is greater than max_id
 		cur.execute(f"SELECT id, title, description, location, timestamp FROM {table} WHERE id > {max_id}")
 		new_data = cur.fetchall()
@@ -88,9 +87,9 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 
 	#Getting the rows 
 
-	IDS, titles, locations, descriptions, TIMESTAMPS, max_id = fetch_postgre_rows(max_id=MAX_ID)
+	IDS, titles, locations, descriptions, TIMESTAMPS, new_max_id = fetch_postgre_rows(max_id=MAX_ID)
 
-	logging.info(f"\nJobs selected for embedding: {len(IDS)}.\Temporal new max_id: {max_id}")
+	logging.info(f"\nJobs selected for embedding: {len(IDS)}.\Temporal new max_id: {new_max_id}")
 
 
 	def rows_to_nested_list(title_list: list, location_list: list, description_list: list) -> list:
@@ -113,7 +112,7 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 	jobs_info= rows_to_nested_list(titles, locations, descriptions)
 
 
-	def raw_descriptions_to_batches(max_tokens: int = 1000, embedding_model: str= embedding_model, print_messages: bool = True) -> list:
+	def raw_descriptions_to_batches(jobs_info: list = jobs_info, max_tokens: int = 1000, embedding_model: str= embedding_model, print_messages: bool = False) -> list:
 		batches = []
 		total_tokens = 0
 		truncation_counter = 0  # Counter for truncations
@@ -171,15 +170,15 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 	elif embedding_model == "e5_base_v2":
 		df = embeddings_e5_base_v2_to_df(batches_to_embed=FORMATTED_E5_QUERY_BATCHES, jobs_info=JOBS_INFO_BATCHES, batches_ids=IDS, batches_timestamps=TIMESTAMPS)
 		try:
-			to_embeddings_e5_base_v2(pipeline=pipeline, df=df, db_url=RENDER_POSTGRE_URL)
+			to_embeddings_e5_base_v2(pipeline=pipeline, df=df, db_url=DB_URL)
 			#At the end of the script, save max_id to the file
-			with open(SAVE_PATH + '/max_id.txt', 'w') as f:
-				f.write(str(max_id))
-			logging.info(f"PostgreToEmbeddings has finished correctly! Writing the max_id: {max_id}")
+			with open(f"data/{MAX_ID_FILE}.txt", "w") as f:
+				f.write(str(new_max_id))
+			logging.info(f"PostgreToEmbeddings has finished correctly! Writing the max_id: {new_max_id} om {MAX_ID_FILE}.txt")
 		except Exception as e:
 			logging.error(f"Exception while sending embeddings to postgre:\n {e}")
 			raise Exception
 
 
 if __name__ == "__main__":
-	PostgreToEmbeddings(pipeline="LocalProd", embedding_model="e5_base_v2")
+	PostgreToEmbeddings(pipeline="PROD", embedding_model="e5_base_v2")
