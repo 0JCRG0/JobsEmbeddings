@@ -10,3 +10,4 @@ utils/__pycache__
 ~/.aws
 archive
 tools
+.DS_Store
