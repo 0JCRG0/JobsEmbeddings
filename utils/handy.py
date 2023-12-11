@@ -201,10 +201,13 @@ def to_embeddings_e5_base_v2(pipeline: str, df: pd.DataFrame, db_url:str):
 
 	if pipeline == "TEST":
 		table = "test_embeddings_e5_base_v2"
+		db = "Local's Postgre"
 	elif pipeline == "PROD":
 		table = "embeddings_e5_base_v2"
+		db = "Render's Postgre"
 	elif pipeline == "LocalProd":
 		table = "embeddings_e5_base_v2"
+		db = "Local's Postgre"
 	else:
 		logging.error("Incorrect argument! Use either 'PROD', ''LocalProd or 'TEST' to run this script.")
 		raise
@@ -212,6 +215,8 @@ def to_embeddings_e5_base_v2(pipeline: str, df: pd.DataFrame, db_url:str):
 	try:
 		# create a connection to the PostgreSQL database
 		cnx = psycopg2.connect(db_url)
+
+		logging.info(f"Pipeline selected = {pipeline}. Sending jobs to {db}")
 
 		# create a cursor object
 		cursor = cnx.cursor()
@@ -278,12 +283,12 @@ def to_embeddings_e5_base_v2(pipeline: str, df: pd.DataFrame, db_url:str):
 
 		# check if the result set is not empty
 		print("\n")
-		print(f"{table} Table Report:", "\n")
+		print(f"{table} Table Report on {db}:", "\n")
 		print(f"Total count of jobs before crawling: {initial_count}")
 		print(f"Total number of unique jobs: {jobs_added_count}")
 		print(f"Current total count of jobs in PostgreSQL: {final_count}")
 
-		postgre_report = f"{table} Table Report:"\
+		postgre_report = f"{table} Table Report on {db}:"\
 						"\n"\
 						f"Total count of jobs before crawling: {initial_count}" \
 						"\n"\
@@ -306,21 +311,24 @@ def to_embeddings_e5_base_v2(pipeline: str, df: pd.DataFrame, db_url:str):
 def test_or_prod(
 		pipeline: str,
 		local_url_postgre: str = LOCAL_POSTGRE_URL,
-		render_url_postgre: str = RENDER_POSTGRE_URL,):
+		render_url_postgre: str = RENDER_POSTGRE_URL,
+		local_max_id_file: str = "max_id_local",
+		render_max_id_file: str = "max_id_render"
+		):
 	
-	if pipeline and local_url_postgre and render_url_postgre:
+	if pipeline and local_url_postgre and render_url_postgre and local_max_id_file and render_max_id_file:
 		if pipeline == 'PROD':
-			print("\n", f"Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table", "\n")
-			return render_url_postgre or ""
+			logging.info(f"Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table")
+			return render_url_postgre or "", render_max_id_file or ""
 		elif pipeline == 'LocalProd':
-			print("\n", f"Pipeline is set to 'LocalProd'. Jobs will be sent to Local PostgreSQL's main_jobs table", "\n")
-			return local_url_postgre or ""
+			logging.info(f"Pipeline is set to 'LocalProd'. Jobs will be sent to Local PostgreSQL's main_jobs table")
+			return local_url_postgre or "", local_max_id_file or ""
 		elif pipeline == 'TEST':
-			print("\n", f"Pipeline is set to 'TEST'. Jobs will be sent to PostgreSQL's test table", "\n")
-			return local_url_postgre or ""
+			logging.info(f"Pipeline is set to 'TEST'. Jobs will be sent to PostgreSQL's test table")
+			return local_url_postgre or "", local_max_id_file or ""
 		else:
 			print("\n", "Incorrect argument! Use either 'PROD', 'LocalProd' or 'TEST' to run this script.", "\n")
-			logging.error("Incorrect argument! Use either 'PROD', 'LocalProd' or 'TEST' to run this script.")
-			raise
+			logging.error("Incorrect arg for pipeline. Use either 'PROD', 'LocalProd' or 'TEST' to run this script.")
+			assert pipeline=="PROD" or pipeline=="LocalProd" or pipeline=="TEST", "Incorrect arg for pipeline. Use either 'PROD', 'LocalProd' or 'TEST' to run this script."
 	else:
-		return None
+		return None, None
