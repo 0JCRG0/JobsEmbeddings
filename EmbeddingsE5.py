@@ -1,3 +1,5 @@
+#!/Users/juanreyesgarcia/Dev/Python/Embeddings/JobsEmbeddings/env1/bin/python
+
 import torch.nn.functional as F
 import torch
 from torch import Tensor
@@ -10,7 +12,6 @@ import logging
 from datetime import datetime
 import pandas as pd
 import numpy as np
-from utils.handy import append_parquet
 import pretty_errors
 
 
