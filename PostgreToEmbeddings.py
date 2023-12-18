@@ -1,16 +1,13 @@
+#!/Users/juanreyesgarcia/Dev/Python/Embeddings/JobsEmbeddings/env1/bin/python
+
 import psycopg2
 import os
 from dotenv import load_dotenv
 import pretty_errors
 import openai
-import timeit
 import logging
-import time
-from openai.error import ServiceUnavailableError
 import pandas as pd
-from datetime import datetime, timedelta
 from utils.handy import *
-from utils.AsyncSummariseJob import async_summarise_job_gpt
 from EmbeddingsOpenAI import embeddings_openai
 from EmbeddingsE5 import embeddings_e5_base_v2_to_df
 
@@ -43,7 +40,7 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 	assert DB_URL is not None or MAX_ID_FILE is not None, "Either URL_DB or MAX_ID_FILE must be assigned valid values. However, at least one of them is not."	
 
 	#Uncomment after first call
-	with open(f"data/{MAX_ID_FILE}.txt", "r") as f:
+	with open(f"/Users/juanreyesgarcia/Dev/Python/Embeddings/JobsEmbeddings/data/{MAX_ID_FILE}.txt", "r") as f:
 		MAX_ID = int(f.read())
 
 	logging.info(f"\n\nStarting PostgreToEmbeddings.\nSelecting new jobs to embed. Starting from ID: {MAX_ID} taken from {MAX_ID_FILE}.txt")
@@ -88,6 +85,9 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 	#Getting the rows 
 
 	IDS, titles, locations, descriptions, TIMESTAMPS, new_max_id = fetch_postgre_rows(max_id=MAX_ID)
+
+	#Check if there are any rows.
+	assert len(IDS) > 1, "No new rows. Be sure crawler is populating the respective table"
 
 	logging.info(f"\nJobs selected for embedding: {len(IDS)}.\Temporal new max_id: {new_max_id}")
 
@@ -172,7 +172,7 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 		try:
 			to_embeddings_e5_base_v2(pipeline=pipeline, df=df, db_url=DB_URL)
 			#At the end of the script, save max_id to the file
-			with open(f"data/{MAX_ID_FILE}.txt", "w") as f:
+			with open(f"/Users/juanreyesgarcia/Dev/Python/Embeddings/JobsEmbeddings/data/{MAX_ID_FILE}.txt", "w") as f:
 				f.write(str(new_max_id))
 			logging.info(f"PostgreToEmbeddings has finished correctly! Writing the max_id: {new_max_id} om {MAX_ID_FILE}.txt")
 		except Exception as e:
