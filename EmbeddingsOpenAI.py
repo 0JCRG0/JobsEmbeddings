@@ -1,16 +1,15 @@
+#!/Users/juanreyesgarcia/Dev/Python/Embeddings/JobsEmbeddings/env1/bin/python
+
 import openai
 import pandas as pd
 import chromadb
-from datetime import datetime
 from utils.handy import *
-from chromadb.utils import embedding_functions
 from dotenv import load_dotenv
 from chromadb.config import Settings
 import os
 import pretty_errors
 import pandas as pd
 import pyarrow as pa
-import pyarrow.parquet as pq
 """ Env variables """
 
 
