@@ -63,13 +63,13 @@ def num_tokens(text: str, model: str ="gpt-3.5-turbo") -> int:
 
 def original_specs_txt_file(content: str): 
 	timestamp = datetime.now()
-	with open(SAVE_PATH + '/specs.txt', 'a') as file:
+	with open(SAVE_PATH + 'specs.txt', 'a') as file:
 		file.write(f"\nAt {timestamp}\n")
 		file.write("RAW BATCHES SPECS: ------- \n")
 		file.write(content)
 
 def summary_specs_txt_file(total_cost: float, processed_time: float): 
-	with open(SAVE_PATH + '/specs.txt', 'a') as file:
+	with open(SAVE_PATH + 'specs.txt', 'a') as file:
 		file.write("\nSUMMARISED BATCHES SPECS: ---------- \n")
 		file.write(f"Total Cost: ${total_cost:.2f} USD\n")
 		file.write(f"Processed Time: {processed_time:.2f} seconds\n\n")
@@ -80,7 +80,7 @@ def save_df_to_csv(id, original, summary):
 		"original": original,
 		"summary": summary})
 
-	df_raw_summarised_batches.to_csv(SAVE_PATH + "/raw_summarised_batches.csv", index=False)
+	df_raw_summarised_batches.to_csv(SAVE_PATH + "raw_summarised_batches.csv", index=False)
 
 def count_words(text: str) -> int:
 	# Remove leading and trailing whitespaces
@@ -94,12 +94,12 @@ def count_words(text: str) -> int:
 
 def df_to_parquet(data: pd.DataFrame, filename:str):
 	df = pd.DataFrame(data)
-	df.to_parquet(SAVE_PATH+ f"/{filename}.parquet", engine='pyarrow')
+	df.to_parquet(SAVE_PATH+ f"{filename}.parquet", engine='pyarrow')
 	print(f"Saved embeddings to ../{filename}.parquet")
 
 def append_parquet(new_df: pd.DataFrame, filename: str):
 	# Load existing data
-	df = pd.read_parquet(SAVE_PATH + f'/{filename}.parquet')
+	df = pd.read_parquet(SAVE_PATH + f'{filename}.parquet')
 	
 	logging.info(f"Preexisting df: {df}")
 	logging.info(f"df to append: {new_df}")
@@ -108,7 +108,7 @@ def append_parquet(new_df: pd.DataFrame, filename: str):
 	df = df.drop_duplicates(subset='id', keep='last')
 
 	# Write back to Parquet
-	df.to_parquet(SAVE_PATH + f'/{filename}.parquet', engine='pyarrow')
+	df.to_parquet(SAVE_PATH + f'{filename}.parquet', engine='pyarrow')
 	logging.info(f"{filename}.parquet has been updated")
 
 def average_pool(last_hidden_states: Tensor,
@@ -158,7 +158,7 @@ def set_dataframe_display_options():
 
 def filter_df_per_country(df: pd.DataFrame, user_desired_country:str) -> pd.DataFrame:
 	# Load the JSON file into a Python dictionary
-	with open(SAVE_PATH + '/continent_countries_with_capitals.json', 'r') as f:
+	with open(SAVE_PATH + 'continent_countries_with_capitals.json', 'r') as f:
 		data = json.load(f)
 
 	# Function to get country information

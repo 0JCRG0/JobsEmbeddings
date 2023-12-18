@@ -40,7 +40,9 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 	assert DB_URL is not None or MAX_ID_FILE is not None, "Either URL_DB or MAX_ID_FILE must be assigned valid values. However, at least one of them is not."	
 
 	#Uncomment after first call
-	with open(f"/Users/juanreyesgarcia/Dev/Python/Embeddings/JobsEmbeddings/data/{MAX_ID_FILE}.txt", "r") as f:
+	MAX_ID_FILE_PATH = SAVE_PATH + MAX_ID_FILE
+	print(MAX_ID_FILE_PATH)
+	with open(f"{MAX_ID_FILE_PATH}.txt", "r") as f:
 		MAX_ID = int(f.read())
 
 	logging.info(f"\n\nStarting PostgreToEmbeddings.\nSelecting new jobs to embed. Starting from ID: {MAX_ID} taken from {MAX_ID_FILE}.txt")
@@ -172,7 +174,7 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 		try:
 			to_embeddings_e5_base_v2(pipeline=pipeline, df=df, db_url=DB_URL)
 			#At the end of the script, save max_id to the file
-			with open(f"/Users/juanreyesgarcia/Dev/Python/Embeddings/JobsEmbeddings/data/{MAX_ID_FILE}.txt", "w") as f:
+			with open(f"{MAX_ID_FILE_PATH}.txt", "w") as f:
 				f.write(str(new_max_id))
 			logging.info(f"PostgreToEmbeddings has finished correctly! Writing the max_id: {new_max_id} om {MAX_ID_FILE}.txt")
 		except Exception as e:
