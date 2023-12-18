@@ -1,3 +1,5 @@
+#!/Users/juanreyesgarcia/Dev/Python/Embeddings/JobsEmbeddings/env1/bin/python
+
 import re
 from chromadb.utils import embedding_functions
 import tiktoken
