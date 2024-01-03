@@ -37,22 +37,23 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 	DB_URL, MAX_ID_FILE = test_or_prod(pipeline=pipeline)
 
 	# Check that DB_URL has an assigned valid value
-	assert DB_URL is not None or MAX_ID_FILE is not None, "Either URL_DB or MAX_ID_FILE must be assigned valid values. However, at least one of them is not."	
+	try:
+		assert DB_URL is not None or MAX_ID_FILE is not None, f"DB_URL and MAX_ID_FILE must be assigned valid values. However, at least one of them is not.\n\nDB_URL: {DB_URL}.\nMAX_ID_FILE: {MAX_ID_FILE}"	
+	except AssertionError as e:
+		logging.error(e)
+
+		raise e
 
 	#Uncomment after first call
 	MAX_ID_FILE_PATH = SAVE_PATH + MAX_ID_FILE
-	print(MAX_ID_FILE_PATH)
 	with open(f"{MAX_ID_FILE_PATH}.txt", "r") as f:
 		MAX_ID = int(f.read())
 
-	logging.info(f"\n\nStarting PostgreToEmbeddings.\nSelecting new jobs to embed. Starting from ID: {MAX_ID} taken from {MAX_ID_FILE}.txt")
+	logging.info(f"\nStarting PostgreToEmbeddings.\nSelecting new jobs to embed. Starting from ID: {MAX_ID} taken from {MAX_ID_FILE}.txt")
 
 	def fetch_postgre_rows(db_url:str=DB_URL, max_id:int = 0) -> list:
 		
-		table = "main_jobs"
-		
-		logging.info(f"Calling fetch_postgre_rows() from {table} table")
-		
+		table = "main_jobs"		
 		
 		#Connect to local postgre db
 		conn = psycopg2.connect(db_url)
@@ -89,7 +90,12 @@ def PostgreToEmbeddings(pipeline: str, embedding_model: str):
 	IDS, titles, locations, descriptions, TIMESTAMPS, new_max_id = fetch_postgre_rows(max_id=MAX_ID)
 
 	#Check if there are any rows.
-	assert len(IDS) > 1, "No new rows. Be sure crawler is populating the respective table"
+	try:
+		assert len(IDS) > 1, "No new rows. Be sure crawler is populating the respective table. Aborting execution."
+	except AssertionError as e:
+		logging.error(e)
+		
+		raise e
 
 	logging.info(f"\nJobs selected for embedding: {len(IDS)}.\Temporal new max_id: {new_max_id}")
 

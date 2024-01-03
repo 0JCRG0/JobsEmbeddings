@@ -545,3 +545,1458 @@ Current total count of jobs in PostgreSQL: 3856
 2023-12-18 10:31:02,212 INFO: 
 PostgreToEmbeddings has finished correctly! Writing the max_id: 4046 om max_id_render.txt
 
+2023-12-18 14:30:08,584 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-18 14:30:08,585 INFO: 
+
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4046 taken from max_id_render.txt
+
+2023-12-18 14:30:08,586 INFO: 
+Calling fetch_postgre_rows() from main_jobs table
+
+2023-12-18 14:30:10,079 INFO: 
+
+Jobs selected for embedding: 38.\Temporal new max_id: 4084
+
+2023-12-18 14:30:10,386 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 38
+TOTAL NUMBER OF TOKENS: 58479
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 24
+AVERAGE NUMBER OF TOKENS PER BATCH: 1538.921052631579
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-18 14:30:26,080 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.26 minutes.
+
+2023-12-18 14:30:26,787 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-18 14:30:30,967 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 3856
+Total number of unique jobs: 38
+Current total count of jobs in PostgreSQL: 3894
+
+2023-12-18 14:30:31,051 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 4084 om max_id_render.txt
+
+2023-12-18 18:30:12,018 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-18 18:30:12,019 INFO: 
+
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4084 taken from max_id_render.txt
+
+2023-12-18 18:30:12,019 INFO: 
+Calling fetch_postgre_rows() from main_jobs table
+
+2023-12-18 18:30:13,599 INFO: 
+
+Jobs selected for embedding: 145.\Temporal new max_id: 4229
+
+2023-12-18 18:30:14,094 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 145
+TOTAL NUMBER OF TOKENS: 144991
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 49
+AVERAGE NUMBER OF TOKENS PER BATCH: 999.9379310344827
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-18 18:31:17,994 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 1.07 minutes.
+
+2023-12-18 18:31:19,004 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-18 18:31:35,130 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 3894
+Total number of unique jobs: 145
+Current total count of jobs in PostgreSQL: 4039
+
+2023-12-18 18:31:35,213 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 4229 om max_id_render.txt
+
+2023-12-18 22:08:47,170 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-18 22:08:47,246 INFO: 
+
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4229 taken from max_id_render.txt
+
+2023-12-18 22:08:47,246 INFO: 
+Calling fetch_postgre_rows() from main_jobs table
+
+2023-12-18 22:30:08,771 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-18 22:30:08,772 INFO: 
+
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4229 taken from max_id_render.txt
+
+2023-12-18 22:30:08,772 INFO: 
+Calling fetch_postgre_rows() from main_jobs table
+
+2023-12-19 06:31:39,052 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-19 06:31:39,053 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4229 taken from max_id_render.txt
+
+2023-12-19 06:31:40,301 INFO: 
+
+Jobs selected for embedding: 129.\Temporal new max_id: 4358
+
+2023-12-19 06:31:41,636 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 129
+TOTAL NUMBER OF TOKENS: 138389
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 58
+AVERAGE NUMBER OF TOKENS PER BATCH: 1072.7829457364342
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-19 06:34:07,628 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.77 minutes.
+
+2023-12-19 06:34:08,210 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-19 06:34:44,343 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 4039
+Total number of unique jobs: 129
+Current total count of jobs in PostgreSQL: 4168
+
+2023-12-19 06:34:44,411 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 4358 om max_id_render.txt
+
+2023-12-19 10:30:33,317 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-19 10:30:33,318 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4358 taken from max_id_render.txt
+
+2023-12-19 10:30:34,228 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-19 14:30:05,311 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-19 14:30:05,312 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4358 taken from max_id_render.txt
+
+2023-12-19 14:30:06,818 INFO: 
+
+Jobs selected for embedding: 184.\Temporal new max_id: 4542
+
+2023-12-19 14:30:07,345 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 184
+TOTAL NUMBER OF TOKENS: 227261
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 66
+AVERAGE NUMBER OF TOKENS PER BATCH: 1235.1141304347825
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-19 14:31:14,943 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 1.13 minutes.
+
+2023-12-19 14:31:15,562 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-19 14:31:30,290 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 4168
+Total number of unique jobs: 184
+Current total count of jobs in PostgreSQL: 4352
+
+2023-12-19 14:31:30,377 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 4542 om max_id_render.txt
+
+2023-12-19 18:30:04,855 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-19 18:30:04,856 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4542 taken from max_id_render.txt
+
+2023-12-19 18:30:06,793 INFO: 
+
+Jobs selected for embedding: 53.\Temporal new max_id: 4595
+
+2023-12-19 18:30:07,107 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 53
+TOTAL NUMBER OF TOKENS: 57592
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 12
+AVERAGE NUMBER OF TOKENS PER BATCH: 1086.6415094339623
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-19 18:30:26,720 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.33 minutes.
+
+2023-12-19 18:30:27,314 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-19 18:30:31,912 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 4352
+Total number of unique jobs: 53
+Current total count of jobs in PostgreSQL: 4405
+
+2023-12-19 18:30:31,983 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 4595 om max_id_render.txt
+
+2023-12-19 22:30:13,974 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-19 22:30:13,975 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4595 taken from max_id_render.txt
+
+2023-12-19 22:30:15,525 INFO: 
+
+Jobs selected for embedding: 94.\Temporal new max_id: 4689
+
+2023-12-19 22:30:16,013 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 94
+TOTAL NUMBER OF TOKENS: 116039
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 39
+AVERAGE NUMBER OF TOKENS PER BATCH: 1234.4574468085107
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-19 22:30:56,317 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.67 minutes.
+
+2023-12-19 22:30:56,944 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-19 22:31:10,261 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 4405
+Total number of unique jobs: 94
+Current total count of jobs in PostgreSQL: 4499
+
+2023-12-19 22:31:10,406 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 4689 om max_id_render.txt
+
+2023-12-19 22:57:49,340 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-19 22:57:49,341 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4689 taken from max_id_render.txt
+
+2023-12-19 22:57:51,027 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-20 06:30:10,604 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-20 06:30:10,605 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4689 taken from max_id_render.txt
+
+2023-12-20 06:30:11,655 INFO: 
+
+Jobs selected for embedding: 82.\Temporal new max_id: 4771
+
+2023-12-20 06:30:12,742 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 82
+TOTAL NUMBER OF TOKENS: 72257
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 31
+AVERAGE NUMBER OF TOKENS PER BATCH: 881.1829268292682
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-20 06:30:37,082 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.41 minutes.
+
+2023-12-20 06:30:37,652 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-20 06:30:46,802 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 4499
+Total number of unique jobs: 82
+Current total count of jobs in PostgreSQL: 4581
+
+2023-12-20 06:30:46,893 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 4771 om max_id_render.txt
+
+2023-12-20 10:30:11,601 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-20 10:30:11,602 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4771 taken from max_id_render.txt
+
+2023-12-20 10:30:13,147 INFO: 
+
+Jobs selected for embedding: 49.\Temporal new max_id: 4820
+
+2023-12-20 10:30:13,445 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 49
+TOTAL NUMBER OF TOKENS: 47708
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 24
+AVERAGE NUMBER OF TOKENS PER BATCH: 973.6326530612245
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-20 10:30:30,652 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.29 minutes.
+
+2023-12-20 10:30:31,375 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-20 10:30:36,852 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 4581
+Total number of unique jobs: 49
+Current total count of jobs in PostgreSQL: 4630
+
+2023-12-20 10:30:36,941 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 4820 om max_id_render.txt
+
+2023-12-20 14:30:10,592 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-20 14:30:10,593 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4820 taken from max_id_render.txt
+
+2023-12-20 14:30:11,759 INFO: 
+
+Jobs selected for embedding: 69.\Temporal new max_id: 4889
+
+2023-12-20 14:30:12,085 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 69
+TOTAL NUMBER OF TOKENS: 75957
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 21
+AVERAGE NUMBER OF TOKENS PER BATCH: 1100.8260869565217
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-20 14:30:37,074 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.42 minutes.
+
+2023-12-20 14:30:37,717 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-20 14:30:43,252 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 4630
+Total number of unique jobs: 69
+Current total count of jobs in PostgreSQL: 4699
+
+2023-12-20 14:30:43,347 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 4889 om max_id_render.txt
+
+2023-12-20 18:34:18,821 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-20 18:34:18,822 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4889 taken from max_id_render.txt
+
+2023-12-20 18:34:19,639 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-20 22:35:26,079 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-20 22:35:26,080 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4889 taken from max_id_render.txt
+
+2023-12-20 22:35:26,842 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-21 15:54:13,339 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-21 15:54:13,340 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4889 taken from max_id_render.txt
+
+2023-12-21 15:54:14,401 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-21 18:30:08,316 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-21 18:30:08,317 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 4889 taken from max_id_render.txt
+
+2023-12-21 18:30:10,634 INFO: 
+
+Jobs selected for embedding: 356.\Temporal new max_id: 5245
+
+2023-12-21 18:30:11,736 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 356
+TOTAL NUMBER OF TOKENS: 364661
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 126
+AVERAGE NUMBER OF TOKENS PER BATCH: 1024.3286516853932
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-21 18:32:18,783 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 2.12 minutes.
+
+2023-12-21 18:32:19,473 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-21 18:33:06,457 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 4699
+Total number of unique jobs: 356
+Current total count of jobs in PostgreSQL: 5055
+
+2023-12-21 18:33:06,568 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 5245 om max_id_render.txt
+
+2023-12-21 22:30:08,351 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-21 22:30:08,352 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5245 taken from max_id_render.txt
+
+2023-12-21 22:30:10,057 INFO: 
+
+Jobs selected for embedding: 104.\Temporal new max_id: 5349
+
+2023-12-21 22:30:10,435 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 104
+TOTAL NUMBER OF TOKENS: 117613
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 40
+AVERAGE NUMBER OF TOKENS PER BATCH: 1130.8942307692307
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-21 22:30:48,982 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.64 minutes.
+
+2023-12-21 22:30:49,965 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-21 22:31:03,120 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 5055
+Total number of unique jobs: 104
+Current total count of jobs in PostgreSQL: 5159
+
+2023-12-21 22:31:03,673 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 5349 om max_id_render.txt
+
+2023-12-22 06:32:51,993 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-22 06:32:52,081 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5349 taken from max_id_render.txt
+
+2023-12-22 06:32:55,500 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-22 10:30:28,500 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-22 10:30:28,501 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5349 taken from max_id_render.txt
+
+2023-12-22 10:30:30,923 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-22 14:30:04,994 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-22 14:30:04,995 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5349 taken from max_id_render.txt
+
+2023-12-22 14:30:06,249 INFO: 
+
+Jobs selected for embedding: 167.\Temporal new max_id: 5516
+
+2023-12-22 14:30:06,710 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 167
+TOTAL NUMBER OF TOKENS: 156051
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 63
+AVERAGE NUMBER OF TOKENS PER BATCH: 934.437125748503
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-22 14:31:08,756 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 1.03 minutes.
+
+2023-12-22 14:31:09,373 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-22 14:31:22,150 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 5159
+Total number of unique jobs: 167
+Current total count of jobs in PostgreSQL: 5326
+
+2023-12-22 14:31:22,228 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 5516 om max_id_render.txt
+
+2023-12-22 18:30:08,557 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-22 18:30:08,558 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5516 taken from max_id_render.txt
+
+2023-12-22 18:30:11,751 INFO: 
+
+Jobs selected for embedding: 58.\Temporal new max_id: 5574
+
+2023-12-22 18:30:12,188 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 58
+TOTAL NUMBER OF TOKENS: 169457
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 26
+AVERAGE NUMBER OF TOKENS PER BATCH: 2921.6724137931033
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-22 18:30:34,404 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.37 minutes.
+
+2023-12-22 18:30:35,794 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-22 18:30:41,914 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 5326
+Total number of unique jobs: 58
+Current total count of jobs in PostgreSQL: 5384
+
+2023-12-22 18:30:41,985 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 5574 om max_id_render.txt
+
+2023-12-22 22:44:50,698 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-22 22:44:50,698 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5574 taken from max_id_render.txt
+
+2023-12-22 22:44:51,474 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-23 06:30:08,302 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-23 06:30:08,303 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5574 taken from max_id_render.txt
+
+2023-12-23 06:30:09,528 INFO: 
+
+Jobs selected for embedding: 149.\Temporal new max_id: 5723
+
+2023-12-23 06:30:09,937 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 149
+TOTAL NUMBER OF TOKENS: 149702
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 56
+AVERAGE NUMBER OF TOKENS PER BATCH: 1004.7114093959732
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-23 06:30:56,977 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.78 minutes.
+
+2023-12-23 06:30:57,532 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-23 06:31:08,662 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 5384
+Total number of unique jobs: 149
+Current total count of jobs in PostgreSQL: 5533
+
+2023-12-23 06:31:08,726 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 5723 om max_id_render.txt
+
+2023-12-23 10:37:23,032 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-23 10:37:23,033 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5723 taken from max_id_render.txt
+
+2023-12-23 10:37:24,424 INFO: 
+
+Jobs selected for embedding: 48.\Temporal new max_id: 5771
+
+2023-12-23 10:37:24,722 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 48
+TOTAL NUMBER OF TOKENS: 44100
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 18
+AVERAGE NUMBER OF TOKENS PER BATCH: 918.75
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-23 10:37:43,750 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.32 minutes.
+
+2023-12-23 10:37:44,299 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-23 10:37:48,101 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 5533
+Total number of unique jobs: 48
+Current total count of jobs in PostgreSQL: 5581
+
+2023-12-23 10:37:48,167 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 5771 om max_id_render.txt
+
+2023-12-23 14:40:01,665 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-23 14:40:01,665 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5771 taken from max_id_render.txt
+
+2023-12-23 14:40:02,659 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-23 18:33:33,625 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-23 18:33:33,625 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5771 taken from max_id_render.txt
+
+2023-12-23 18:33:34,502 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-23 22:40:29,360 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-23 22:40:29,361 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5771 taken from max_id_render.txt
+
+2023-12-23 22:40:30,207 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-24 06:38:24,740 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-24 06:38:24,741 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5771 taken from max_id_render.txt
+
+2023-12-24 06:48:48,928 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-24 10:30:06,483 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-24 10:30:06,483 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5771 taken from max_id_render.txt
+
+2023-12-24 10:30:07,278 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-24 14:30:08,306 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-24 14:30:08,307 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5771 taken from max_id_render.txt
+
+2023-12-24 14:30:09,137 INFO: 
+
+Jobs selected for embedding: 2.\Temporal new max_id: 5773
+
+2023-12-24 14:30:09,375 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 2
+TOTAL NUMBER OF TOKENS: 239
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 0
+AVERAGE NUMBER OF TOKENS PER BATCH: 119.5
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-24 14:30:12,036 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.04 minutes.
+
+2023-12-24 14:30:12,623 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-24 14:30:13,276 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 5581
+Total number of unique jobs: 2
+Current total count of jobs in PostgreSQL: 5583
+
+2023-12-24 14:30:13,341 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 5773 om max_id_render.txt
+
+2023-12-24 18:30:08,347 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-24 18:30:08,348 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 5773 taken from max_id_render.txt
+
+2023-12-24 18:30:10,093 INFO: 
+
+Jobs selected for embedding: 282.\Temporal new max_id: 6055
+
+2023-12-24 18:30:10,726 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 282
+TOTAL NUMBER OF TOKENS: 274737
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 103
+AVERAGE NUMBER OF TOKENS PER BATCH: 974.2446808510638
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-24 18:31:44,944 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 1.57 minutes.
+
+2023-12-24 18:31:45,623 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-24 18:32:12,360 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 5583
+Total number of unique jobs: 282
+Current total count of jobs in PostgreSQL: 5865
+
+2023-12-24 18:32:12,450 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 6055 om max_id_render.txt
+
+2023-12-24 22:36:58,671 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-24 22:36:58,674 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6055 taken from max_id_render.txt
+
+2023-12-24 22:36:59,458 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-25 06:43:18,470 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-25 06:43:18,471 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6055 taken from max_id_render.txt
+
+2023-12-25 06:43:19,321 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-25 10:41:49,202 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-25 10:41:49,205 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6055 taken from max_id_render.txt
+
+2023-12-25 10:41:50,218 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-25 14:43:19,456 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-25 14:43:19,456 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6055 taken from max_id_render.txt
+
+2023-12-25 14:43:20,329 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-25 18:30:29,792 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-25 18:30:29,803 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6055 taken from max_id_render.txt
+
+2023-12-25 18:30:30,686 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-25 22:35:16,223 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-25 22:35:16,224 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6055 taken from max_id_render.txt
+
+2023-12-25 22:35:17,128 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-26 06:43:32,455 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-26 06:43:32,456 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6055 taken from max_id_render.txt
+
+2023-12-26 18:07:37,807 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-26 18:07:37,807 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6055 taken from max_id_render.txt
+
+2023-12-26 18:07:39,050 INFO: 
+
+Jobs selected for embedding: 343.\Temporal new max_id: 6398
+
+2023-12-26 18:07:39,684 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 343
+TOTAL NUMBER OF TOKENS: 304947
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 127
+AVERAGE NUMBER OF TOKENS PER BATCH: 889.0583090379009
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-26 18:09:26,401 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 1.78 minutes.
+
+2023-12-26 18:09:27,089 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-26 18:09:53,297 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 5865
+Total number of unique jobs: 343
+Current total count of jobs in PostgreSQL: 6208
+
+2023-12-26 18:09:53,441 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 6398 om max_id_render.txt
+
+2023-12-26 18:30:07,816 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-26 18:30:07,816 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6398 taken from max_id_render.txt
+
+2023-12-26 18:30:08,992 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-26 22:33:32,899 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-26 22:33:32,900 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6398 taken from max_id_render.txt
+
+2023-12-26 22:33:34,169 INFO: 
+
+Jobs selected for embedding: 31.\Temporal new max_id: 6429
+
+2023-12-26 22:33:34,684 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 31
+TOTAL NUMBER OF TOKENS: 29323
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 9
+AVERAGE NUMBER OF TOKENS PER BATCH: 945.9032258064516
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2023-12-26 22:33:53,649 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 0.32 minutes.
+
+2023-12-26 22:33:55,204 INFO: 
+Pipeline selected = PROD. Sending jobs to Render's Postgre
+
+2023-12-26 22:33:58,154 INFO: 
+embeddings_e5_base_v2 Table Report on Render's Postgre:
+Total count of jobs before crawling: 6208
+Total number of unique jobs: 31
+Current total count of jobs in PostgreSQL: 6239
+
+2023-12-26 22:33:58,305 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 6429 om max_id_render.txt
+
+2023-12-27 06:30:08,497 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-27 06:30:08,498 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-27 06:30:09,353 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-27 10:30:28,705 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-27 10:30:28,706 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-27 10:30:29,626 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-27 14:30:08,297 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-27 14:30:08,298 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-27 14:30:09,215 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-27 18:45:03,109 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-27 18:45:03,109 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-27 22:30:08,375 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-27 22:30:08,376 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-27 22:30:09,220 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-28 06:41:53,774 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-28 06:41:53,775 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-28 06:41:54,576 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-28 10:30:08,313 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-28 10:30:08,314 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-28 10:30:09,126 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-28 14:30:07,319 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-28 14:30:07,320 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-28 14:30:09,297 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-28 18:30:08,873 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-28 18:30:08,874 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-28 18:30:09,846 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-29 00:04:49,772 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-29 00:04:49,896 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-29 00:05:19,297 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-29 06:44:59,958 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-29 06:44:59,959 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-29 06:45:01,536 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-29 11:46:14,020 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-29 11:46:14,181 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-29 11:46:17,477 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-29 14:55:27,291 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-29 14:55:27,444 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-29 14:55:32,523 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-29 18:57:07,819 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-29 18:57:07,823 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-29 18:57:09,160 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-29 22:30:18,299 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-29 22:30:18,300 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-29 22:30:19,180 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-30 07:45:00,348 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-30 07:45:00,473 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-30 07:45:05,244 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-30 11:30:24,543 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-30 11:30:24,698 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-30 11:30:54,175 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-30 14:33:03,135 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-30 14:33:03,260 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-30 14:33:08,490 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-30 19:25:27,500 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-30 19:25:27,578 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-30 19:25:31,207 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-30 22:33:01,765 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-30 22:33:01,958 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-30 22:33:07,597 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-31 06:33:01,225 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-31 06:33:01,346 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-31 06:33:06,167 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-31 10:32:56,430 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-31 10:32:56,544 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-31 10:33:01,016 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-31 14:32:43,712 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-31 14:32:43,877 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-31 14:32:47,969 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2023-12-31 19:44:29,161 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2023-12-31 19:44:29,238 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2023-12-31 19:44:32,338 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-01 00:06:07,008 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-01 00:06:07,086 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-01 00:06:11,483 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-01 06:47:18,173 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-01 06:47:18,242 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-01 06:47:21,673 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-01 11:21:48,869 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-01 11:21:48,946 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-01 11:22:19,156 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-01 15:07:18,684 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-01 15:07:18,765 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-01 15:07:21,155 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-01 18:31:30,992 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-01 18:31:31,043 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-01 18:31:34,813 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-01 22:32:45,209 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-01 22:32:45,434 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-01 22:32:49,813 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-02 00:01:23,627 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-02 00:01:23,628 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-02 00:01:24,788 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-02 06:30:02,952 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-02 06:30:02,954 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-02 06:30:03,983 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-02 10:31:52,718 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-02 10:31:52,896 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-02 10:31:55,470 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-02 14:30:45,860 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-02 14:30:45,862 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-02 14:30:47,613 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-02 18:30:27,554 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-02 18:30:27,558 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-02 18:30:28,957 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-02 22:30:41,854 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-02 22:30:41,856 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-02 22:30:43,974 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-03 06:42:04,736 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-03 06:42:04,737 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-03 06:42:40,504 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-03 10:30:09,115 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-03 10:30:09,116 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_render.txt
+
+2024-01-03 10:30:10,459 ERROR: 
+No new rows. Be sure crawler is populating the respective table. Aborting execution.
+
+2024-01-03 12:04:21,289 INFO: 
+Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table
+
+2024-01-03 12:04:21,289 INFO: 
+
+Starting PostgreToEmbeddings.
+Selecting new jobs to embed. Starting from ID: 6429 taken from max_id_prod.txt
+
+2024-01-03 12:04:23,660 INFO: 
+
+Jobs selected for embedding: 655.\Temporal new max_id: 7084
+
+2024-01-03 12:04:25,568 INFO: 
+
+RAW BATCHES SPECS: -------
+TOTAL NUMBER OF BATCHES: 655
+TOTAL NUMBER OF TOKENS: 604117
+MAX TOKENS PER BATCH: 1000
+NUMBER OF TRUNCATIONS: 203
+AVERAGE NUMBER OF TOKENS PER BATCH: 922.3160305343512
+APPROXIMATE COST OF EMBEDDING: $0 USD
+
+
+2024-01-03 12:07:30,232 INFO: 
+
+embeddings_e5_base_v2_to_df() done! Elapsed time: 3.08 minutes.
+
+2024-01-03 12:07:30,791 INFO: 
+Pipeline selected = PROD. Sending jobs to DO's prod Postgre
+
+2024-01-03 12:08:58,646 INFO: 
+embeddings_e5_base_v2 Table Report on DO's prod Postgre:
+Total count of jobs before crawling: 6239
+Total number of unique jobs: 655
+Current total count of jobs in PostgreSQL: 6894
+
+2024-01-03 12:08:58,745 INFO: 
+PostgreToEmbeddings has finished correctly! Writing the max_id: 7084 om max_id_prod.txt
+

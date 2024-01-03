@@ -23,6 +23,8 @@ LOGGER_TEST = os.getenv("LOGGER_TEST")
 SAVE_PATH = os.getenv("SAVE_PATH")
 RENDER_POSTGRE_URL = os.environ.get("RENDER_POSTGRE_URL")
 LOCAL_POSTGRE_URL = os.environ.get("LOCAL_POSTGRE_URL")
+DATABASE_URL = os.environ.get("DATABASE_URL_DO")
+
 
 
 def clean_rows(s):
@@ -202,11 +204,11 @@ def to_embeddings_e5_base_v2(pipeline: str, df: pd.DataFrame, db_url:str):
 	table = None
 
 	if pipeline == "TEST":
-		table = "test_embeddings_e5_base_v2"
-		db = "Local's Postgre"
+		table = "test_embeddings"
+		db = "DO's test Postgre"
 	elif pipeline == "PROD":
 		table = "embeddings_e5_base_v2"
-		db = "Render's Postgre"
+		db = "DO's prod Postgre"
 	elif pipeline == "LocalProd":
 		table = "embeddings_e5_base_v2"
 		db = "Local's Postgre"
@@ -313,20 +315,21 @@ def to_embeddings_e5_base_v2(pipeline: str, df: pd.DataFrame, db_url:str):
 def test_or_prod(
 		pipeline: str,
 		local_url_postgre: str = LOCAL_POSTGRE_URL,
-		render_url_postgre: str = RENDER_POSTGRE_URL,
+		managed_url_postgre: str = DATABASE_URL,
 		local_max_id_file: str = "max_id_local",
-		render_max_id_file: str = "max_id_render"
+		prod_max_id_file: str = "max_id_prod",
+		test_max_id_file: str = "max_id_test"
 		):
 	
-	if pipeline and local_url_postgre and render_url_postgre and local_max_id_file and render_max_id_file:
+	if pipeline and local_url_postgre and managed_url_postgre and local_max_id_file and prod_max_id_file and test_max_id_file:
 		if pipeline == 'PROD':
 			logging.info(f"Pipeline is set to 'PROD'. Jobs will be sent to Render PostgreSQL's main_jobs table")
-			return render_url_postgre or "", render_max_id_file or ""
-		elif pipeline == 'LocalProd':
-			logging.info(f"Pipeline is set to 'LocalProd'. Jobs will be sent to Local PostgreSQL's main_jobs table")
-			return local_url_postgre or "", local_max_id_file or ""
+			return managed_url_postgre or "", prod_max_id_file or ""
 		elif pipeline == 'TEST':
 			logging.info(f"Pipeline is set to 'TEST'. Jobs will be sent to PostgreSQL's test table")
+			return managed_url_postgre or "", test_max_id_file or ""
+		elif pipeline == 'LocalProd':
+			logging.info(f"Pipeline is set to 'LocalProd'. Jobs will be sent to Local PostgreSQL's main_jobs table")
 			return local_url_postgre or "", local_max_id_file or ""
 		else:
 			print("\n", "Incorrect argument! Use either 'PROD', 'LocalProd' or 'TEST' to run this script.", "\n")
